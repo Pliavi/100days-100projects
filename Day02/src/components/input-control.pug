@@ -1,0 +1,11 @@
+mixin input-control (text)
+  div(class="pl-4 mt-4 transition-colors duration-500 ease-in-out border-l-2 border-gray-300")
+    label(for!=attributes.id class="block mb-2 font-bold text-gray-700")= text
+    div(class="relative input-control")
+      if attributes["data-prefix"] == "money"
+        span(class="absolute font-bold text-gray-700 bg-gray-300 rounded-sm opacity-75" style="padding: 3px 8px; margin: 3px") R$
+      input(
+        class="block w-full px-2 py-1 border-2 border-gray-300 rounded-md outline-none focus:border-purple-600" 
+        class=(attributes["data-prefix"] == "money" ? "pl-10": "")
+      )&attributes(attributes)
+        

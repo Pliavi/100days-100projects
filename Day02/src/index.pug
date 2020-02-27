@@ -1,0 +1,13 @@
+extends layout
+block form
+  div(class="py-8 text-4xl font-bold text-center text-white bg-purple-700 rounded-md shadow-lg" id="result")
+    | R$ 0,00
+
+  +input-control("Tempo diário investido no projeto")(value="1" type="number" lang="pt-BR" min="1" max="24" id="dailyWorkingHoursInput" autofocus)
+  +input-control("Dias efetivos trabalhando")(value="1" type="number" lang="pt-BR" min="1" id="workDaysInput")
+  +input-control("Dias de férias por projeto")(value="1" type="number" lang="pt-BR" min="1" id="vacationDaysInput")
+  +input-control("Valor total do projeto")(value="1.00" type="number" data-prefix="money" lang="pt-BR" min="1.00" id="projectValueInput")
+
+block page
+  h1(id="input-info-title" class="mb-2 text-2xl font-bold text-white") Carregando...
+  p(id="input-info-body" class="text-white") Carregando...
